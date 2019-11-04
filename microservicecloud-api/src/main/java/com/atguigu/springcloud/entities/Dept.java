@@ -2,7 +2,10 @@
 package com.atguigu.springcloud.entities;
  
 import java.io.Serializable;
- 
+
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
@@ -11,6 +14,7 @@ import lombok.experimental.Accessors;
 @NoArgsConstructor
 @Data
 @Accessors(chain=true)
+
 public class Dept implements Serializable //必须序列化
 {
   private Long  deptno;   //主键
@@ -21,12 +25,13 @@ public class Dept implements Serializable //必须序列化
 //  {
 //   super();   
 //  }
-  
+//  
   public Dept(String dname)
   {
    super();
    this.dname = dname;
   }
+  
   public Dept(java.lang.Long deptno, java.lang.String dname, java.lang.String db_source)
   {
    super();
@@ -34,6 +39,16 @@ public class Dept implements Serializable //必须序列化
    this.dname = dname;
    this.db_source = db_source;
   }
+//  @JsonCreator
+//public Dept(@JsonProperty("deptno") java.lang.Long deptno,@JsonProperty("dname")  java.lang.String dname, @JsonProperty("db_source")  java.lang.String db_source)
+//{
+// super();
+// this.deptno = (Long)deptno;
+// this.dname = dname;
+// this.db_source = db_source;
+//}
+  
+  
 public Long getDeptno() {
 	return deptno;
 }
