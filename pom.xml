@@ -67,7 +67,7 @@
      </dependency>
    </dependencies>
   </dependencyManagement>
-  
+
   <build>
    <finalName>microservicecloud</finalName>
    <resources>
@@ -110,6 +110,6 @@
   	<module>microservicecloud-config-eureka-client-7001</module>
   	<module>microservicecloud-config-dept-client-8001</module>
   	<module>microservicecloud-sidecar-7667</module>
-  	<module>config-client3355</module>
+
   </modules>
 </project> 
