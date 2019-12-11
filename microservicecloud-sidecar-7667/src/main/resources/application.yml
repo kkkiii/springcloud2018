@@ -1,0 +1,23 @@
+
+
+server:
+  port: 7667
+
+spring:
+  application:
+    name: laravel58
+
+eureka:
+  client:
+    serviceUrl:
+#      defaultZone: ${EUREKA_URI:http://localhost:7001/eureka},${EUREKA_URI:http://localhost:7002/eureka},${EUREKA_URI:http://localhost:7004/eureka}
+       defaultZone: http://localhost:7001/eureka
+    registerWithEureka: true
+    fetchRegistry: false
+  instance:
+    preferIpAddress: true
+    instance-id: laravel58
+
+sidecar:
+  port: 8060
+  health-uri: http://localhost:8060/health.json
